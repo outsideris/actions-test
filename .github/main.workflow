@@ -5,6 +5,7 @@ workflow "New workflow" {
 
 action "Docker Registry" {
   uses = "actions/docker/login@6495e70"
+  secrets = ["DOCKER_USERNAME", "DOCKER_PASSWORD", "DOCKER_REGISTRY_URL"]
 }
 
 action "GitHub Action for Docker" {
