@@ -1,9 +1,6 @@
 workflow "New workflow" {
   on = "pull_request"
-  resolves = [
-    "GitHub Action for Docker",
-    "GitHub Action for npm",
-  ]
+  resolves = ["Bundle Size"]
 }
 
 action "Install" {
