@@ -16,5 +16,5 @@ action "Build" {
 
 action "Bundle Size" {
   needs = ["Build"]
-  uses = "../actions/bundle-size"
+  uses = "./actions/bundle-size"
 }
