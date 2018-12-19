@@ -1,6 +1,6 @@
 workflow "Pull Request Checks" {
-  on = "pull_request"
   resolves = ["Bundle Size"]
+  on = "push"
 }
 
 action "Install" {
