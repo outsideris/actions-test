@@ -17,4 +17,5 @@ action "Build" {
 action "Bundle Size" {
   needs = ["Build"]
   uses = "./actions/bundle-size"
+  secrets = ["GITHUB_TOKEN"]
 }
