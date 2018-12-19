@@ -1,4 +1,4 @@
-workflow "New workflow" {
+workflow "Pull Request Checks" {
   on = "pull_request"
   resolves = ["Bundle Size"]
 }
