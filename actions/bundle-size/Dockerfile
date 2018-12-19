@@ -9,5 +9,8 @@ LABEL "repository"="https://github.com/outsideris/actions-test/actions/bundle-si
 LABEL "homepage"="http://github.com/outsideris/actions-test"
 LABEL "maintainer"="Outsider <outsider@example.com>"
 
+RUN apt-get update && \
+    apt-get install -y jq
+
 ADD entrypoint.sh /entrypoint.sh
 ENTRYPOINT ["/entrypoint.sh"]
