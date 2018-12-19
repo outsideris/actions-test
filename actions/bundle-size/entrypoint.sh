@@ -2,6 +2,8 @@
 
 ls -lha build/static/js/*.js  | awk '{print $5,$9}'
 
-echo "------"
+DATA=$(ls -lha build/static/js/*.js  | awk '{print $5,$9}')
 
-cat /github/workflow/event.json
+URL=$(cat /github/workflow/event.json | jq .pull_request._links.comments.href)
+
+curl -d '{\"body\":\"$DATA\"}' -H "Content-Type: application/json" -X POST "$URL"
