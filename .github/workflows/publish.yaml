@@ -33,6 +33,8 @@ jobs:
             });
             var fs = require('fs');
             fs.writeFileSync('${{github.workspace}}/src.zip', Buffer.from(download.data));
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - run: unzip src.zip
       - run: ls
         working-directory: src
