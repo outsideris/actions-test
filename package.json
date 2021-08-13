@@ -1,6 +1,6 @@
 {
   "name": "@outsideris/example-module",
-  "version": "0.3.2",
+  "version": "0.3.3",
   "dependencies": {
     "debug": "^4.3.2"
   },
