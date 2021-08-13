@@ -1,6 +1,6 @@
 {
   "name": "actions-test",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "dependencies": {
     "debug": "^4.3.2"
   },
