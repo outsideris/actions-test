@@ -13,6 +13,8 @@ jobs:
       contents: read
       packages: write
     steps:
+      - name: Sleep for 3 seconds
+        run: sleep 3s
       - uses: actions/download-artifact@v2
         with:
           name: src
