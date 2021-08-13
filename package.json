@@ -1,6 +1,6 @@
 {
   "name": "@outsideris/example-module",
-  "version": "0.3.9",
+  "version": "0.3.10",
   "repository": {
     "type": "git",
     "url": "https://github.com/outsideris/actions-test.git"
