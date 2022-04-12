@@ -1,0 +1,21 @@
+name: Reusable Called Workflow
+
+on:
+  push:
+  workflow_call:
+    inputs:
+      username:
+        required: true
+        type: string
+    secrets:
+      SECRET_SEED:
+        required: true
+      
+jobs:
+  reusable_workflow_job:
+    runs-on: ubuntu-latest
+    steps:
+      - run: | 
+          echo ${{ inputs.username }}
+          echo ${{ secrets.SECRET_SEED }}
+      
