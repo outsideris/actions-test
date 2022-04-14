@@ -5,7 +5,7 @@ on:
       
 jobs:
   call-workflow-1-in-local-repo:
-    uses: outsideris/actions-test/.github/workflows/called.yaml
+    uses: outsideris/actions-test/.github/workflows/called.yaml@fd2c8ce
     with:
       username: outsider
     secrets:
