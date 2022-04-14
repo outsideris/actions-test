@@ -1,0 +1,17 @@
+name: Reusable Caller Workflow
+
+on:
+  push:
+      
+jobs:
+  call-workflow-1-in-local-repo:
+    uses: outsideris/actions-test/.github/workflows/called.yaml
+    with:
+      username: outsider
+    secrets:
+      SECRET_SEED: world
+  call-workflow-2-in-local-repo:
+    uses: ./.github/workflows/called.yaml
+    with:
+      username: mona
+        
