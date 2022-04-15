@@ -16,4 +16,10 @@ jobs:
       username: mona
     secrets:
       SECRET_SEED: seed
+  call-workflow-3-in-local-repo:
+    uses: ./.github/workflows/not-called.yaml
+    with:
+      username: mona
+    secrets:
+      SECRET_SEED: seed
         
