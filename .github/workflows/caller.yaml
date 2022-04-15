@@ -14,4 +14,6 @@ jobs:
     uses: ./.github/workflows/called.yaml
     with:
       username: mona
+    secrets:
+      SECRET_SEED: seed
         
