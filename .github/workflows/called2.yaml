@@ -1,0 +1,14 @@
+name: Reusable Workflow
+
+on:
+  workflow_call:
+      
+jobs:
+  reusable_workflow_job1:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "It's called workflow"
+    runs-on: ubuntu-latest
+    steps:
+      - run: goodbye.sh
+      
