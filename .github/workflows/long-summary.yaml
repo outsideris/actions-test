@@ -35,5 +35,5 @@ jobs:
       - name: Generate list using Markdown
         run: |
           echo "# Title 2" >> $GITHUB_STEP_SUMMARY
-            - run: echo hello world
+      - run: echo hello world
       
