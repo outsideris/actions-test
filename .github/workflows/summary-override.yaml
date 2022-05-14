@@ -12,8 +12,8 @@ jobs:
           echo "" >> $GITHUB_STEP_SUMMARY # this is a blank line
           echo "- Lets add a bullet point" >> $GITHUB_STEP_SUMMARY
           echo "- Lets add a second bullet point" >> $GITHUB_STEP_SUMMARY
-          echo "- How about a third one?" >> $GITHUB_STEP_SUMMARY
+          echo "Reset content" > $GITHUB_STEP_SUMMARY
       - run: echo hello world
       - name: summary
-        run: echo ‘### Final Summary!’ > $GITHUB_STEP_SUMMARY
+        run: echo "### Final Summary!" > $GITHUB_STEP_SUMMARY
       
