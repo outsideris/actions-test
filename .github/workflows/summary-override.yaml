@@ -14,6 +14,8 @@ jobs:
           echo "- Lets add a second bullet point" >> $GITHUB_STEP_SUMMARY
           echo "Reset content" > $GITHUB_STEP_SUMMARY
       - run: echo hello world
+      - name: remove summary
+        run: rm $GITHUB_STEP_SUMMARY
       - name: summary
         run: echo "### Final Summary!" > $GITHUB_STEP_SUMMARY
       
