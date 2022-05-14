@@ -3,7 +3,7 @@ name: Long Summary Workflow
 on: push
 
 jobs:
-  somethin:
+  something:
     runs-on: ubuntu-latest
     steps:
       - name: Generate list using Markdown
@@ -24,9 +24,9 @@ jobs:
           echo "- [ ] hi" >> $GITHUB_STEP_SUMMARY
           echo "- [ ] hi2" >> $GITHUB_STEP_SUMMARY
           echo "" >> $GITHUB_STEP_SUMMARY
-          echo "```mermaid" >> $GITHUB_STEP_SUMMARY
+          echo "\`\`\`mermaid" >> $GITHUB_STEP_SUMMARY
           echo "stateDiagram-v2" >> $GITHUB_STEP_SUMMARY
           echo "    s1 --> s2" >> $GITHUB_STEP_SUMMARY
-          echo "```" >> $GITHUB_STEP_SUMMARY
+          echo "\`\`\`" >> $GITHUB_STEP_SUMMARY
       - run: echo hello world
       
