@@ -8,4 +8,9 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - run: |
+          npm -s run env echo '$npm_package_version'
           echo "::set-output name=tag::v`npm -s run env echo '$npm_package_version'`"
+      - env:
+          VERSION: ${{ steps.get-version.outputs.version }}
+        run: |
+          echo $VERSION
