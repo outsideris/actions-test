@@ -1,0 +1,11 @@
+name: Long Summary Workflow
+
+on: [push, workflow_dispatch]
+
+jobs:
+  version:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - run: |
+          echo "::set-output name=tag::v`npm -s run env echo '$npm_package_version'`"
