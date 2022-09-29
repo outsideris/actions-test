@@ -1,0 +1,11 @@
+name: Dynamic name
+
+on: [push, workflow_dispatch]
+
+jobs:
+  version:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - run: echo "{VERSION}={v1.0.0}" >> $GITHUB_ENV
+      - run: echo "${{ github.env.VERSION}}"
