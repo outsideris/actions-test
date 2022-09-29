@@ -7,7 +7,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      - run: echo "{VERSION}={v1.0.0}" >> $GITHUB_ENV
+      - run: echo "VERSION=v1.0.0" >> $GITHUB_ENV
       - run: echo $VERSION
       - run: echo "${{ github }}"
       - run: echo "${{ github.env }}"
+      - run: echo "${{ github.env.VERSION }}"
