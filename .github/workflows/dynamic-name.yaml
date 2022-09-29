@@ -8,5 +8,6 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - run: echo "{VERSION}={v1.0.0}" >> $GITHUB_ENV
-      - run: echo "${{ github.env.VERSION}}"
-      - run: echo "${{ env.VERSION}}"
+      - run: echo $VERSION
+      - run: echo "${{ github }}"
+      - run: echo "${{ github.env }}"
