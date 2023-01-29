@@ -19,9 +19,9 @@ jobs:
       - name: new output test
         id: new-test
         run: |
-          echo "dir=hello" >> $GITHUB_OUTPUT
+          echo "SELECTED_COLOR=green" >> $GITHUB_OUTPUT
       - name: new output test echo 
-        run: echo ${{ steps.new-test.outputs.dir }}
+        run: echo ${{ steps.new-test.outputs.SELECTED_COLOR }}
       - name: new output
         id: new-cached
         run: |
