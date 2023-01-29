@@ -17,14 +17,17 @@ jobs:
       - name: legacy output echo 
         run: echo ${{ steps.npm-cache.outputs.dir }}
       - name: new output test
+        id: new-test
         run: |
-          echo "dir=$(npm config get cache)"
+          echo "dir=C:\npm\cache" >> $GITHUB_OUTPUT
+      - name: new output test echo 
+        run: echo ${{ steps.new-test.outputs.dir }}
       - name: new output
         id: new-cached
         run: |
           echo "dir=$(npm config get cache)" >> $GITHUB_OUTPUT
       - name: new output echo 
-        run: echo ${{ steps.new-cached.outputs }}
+        run: echo ${{ steps.new-cached.outputs }} | jq .
       - name: new output echo 
         run: echo ${{ steps.new-cached.outputs.dir }}
       
