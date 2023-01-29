@@ -24,5 +24,7 @@ jobs:
         run: |
           echo "dir=$(npm config get cache)" >> $GITHUB_OUTPUT
       - name: new output echo 
+        run: echo ${{ steps.new-cached.outputs }}
+      - name: new output echo 
         run: echo ${{ steps.new-cached.outputs.dir }}
       
