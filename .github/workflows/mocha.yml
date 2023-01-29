@@ -19,21 +19,24 @@ jobs:
       
       - name: Set color
         id: random-color-generator
-        run: echo "SELECTED_COLOR=green" >> $env:GITHUB_OUTPUT
+        run: echo "SELECTED_COLOR=green" >> $GITHUB_OUTPUT
+        shell: bash
       - name: Get color
         run: echo "The selected color is ${{ steps.random-color-generator.outputs.SELECTED_COLOR }}"
       
       - name: new output test
         id: new-test
         run: |
-          echo "dir=hello" >> $env:GITHUB_OUTPUT
+          echo "dir=hello" >> $GITHUB_OUTPUT
+        shell: bash
       - name: new output test echo 
         run: echo ${{ steps.new-test.outputs.dir }}
 
       - name: new output
         id: new-cached
         run: |
-          echo "dir=$(npm config get cache)" >> $env:GITHUB_OUTPUT
+          echo "dir=$(npm config get cache)" >> $GITHUB_OUTPUT
+        shell: bash
       - name: new output echo 
         run: echo ${{ steps.new-cached.outputs.dir }}
       
