@@ -1,0 +1,21 @@
+name: Tests
+on: [push]
+
+jobs:
+  test-node:
+    name: 'Node.js'
+    needs: smoke
+    runs-on: windows-2019
+    steps:
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 19
+      - uses: actions/checkout@v3
+      - name: Get npm cache directory in Windows
+        id: npm-cache
+        if: ${{ matrix.os == 'windows-2019' }}
+        run: |
+          echo "::set-output name=dir::$(npm config get cache)"
+      - name: Install Dependencies
+        run: echo ${{ steps.npm-cache.outputs.dir }}
+      
