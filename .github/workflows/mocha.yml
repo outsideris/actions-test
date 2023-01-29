@@ -4,7 +4,7 @@ on: [push]
 jobs:
   test-node:
     name: 'Node.js'
-    runs-on: windows-latest
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/setup-node@v3
         with:
@@ -29,12 +29,11 @@ jobs:
           echo "dir=hello" >> $GITHUB_OUTPUT
       - name: new output test echo 
         run: echo ${{ steps.new-test.outputs.dir }}
+
       - name: new output
         id: new-cached
         run: |
           echo "dir=$(npm config get cache)" >> $GITHUB_OUTPUT
-      - name: new output echo 
-        run: echo ${{ steps.new-cached.outputs }} | jq .
       - name: new output echo 
         run: echo ${{ steps.new-cached.outputs.dir }}
       
