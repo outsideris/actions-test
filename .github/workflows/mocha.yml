@@ -19,7 +19,7 @@ jobs:
       - name: new output test
         id: new-test
         run: |
-          echo "dir=C:\npm\cache" >> $GITHUB_OUTPUT
+          echo "dir=hello" >> $GITHUB_OUTPUT
       - name: new output test echo 
         run: echo ${{ steps.new-test.outputs.dir }}
       - name: new output
