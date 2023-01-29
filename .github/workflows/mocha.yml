@@ -10,10 +10,16 @@ jobs:
         with:
           node-version: 19
       - uses: actions/checkout@v3
-      - name: Get npm cache directory in Windows
+      - name: legacy output
         id: npm-cache
         run: |
           echo "::set-output name=dir::$(npm config get cache)"
-      - name: Install Dependencies
+      - name: legacy output echo 
         run: echo ${{ steps.npm-cache.outputs.dir }}
+      - name: new output
+        id: npm-cached
+        run: |
+          echo "DIR=$(npm config get cache)" >> $GITHUB_OUTPUT
+      - name: new output echo 
+        run: echo ${{ steps.npm-cached.outputs.DIR }}
       
