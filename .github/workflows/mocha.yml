@@ -4,7 +4,7 @@ on: [push]
 jobs:
   test-node:
     name: 'Node.js'
-    runs-on: ubuntu-latest
+    runs-on: windows-latest
     steps:
       - uses: actions/setup-node@v3
         with:
