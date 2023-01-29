@@ -4,7 +4,7 @@ on: [push]
 jobs:
   test-node:
     name: 'Node.js'
-    runs-on: ubuntu-latest
+    runs-on: windows-2019
     steps:
       - uses: actions/setup-node@v3
         with:
@@ -19,21 +19,21 @@ jobs:
       
       - name: Set color
         id: random-color-generator
-        run: echo "SELECTED_COLOR=green" >> $GITHUB_OUTPUT
+        run: echo "SELECTED_COLOR=green" >> $env:GITHUB_OUTPUT
       - name: Get color
         run: echo "The selected color is ${{ steps.random-color-generator.outputs.SELECTED_COLOR }}"
       
       - name: new output test
         id: new-test
         run: |
-          echo "dir=hello" >> $GITHUB_OUTPUT
+          echo "dir=hello" >> $env:GITHUB_OUTPUT
       - name: new output test echo 
         run: echo ${{ steps.new-test.outputs.dir }}
 
       - name: new output
         id: new-cached
         run: |
-          echo "dir=$(npm config get cache)" >> $GITHUB_OUTPUT
+          echo "dir=$(npm config get cache)" >> $env:GITHUB_OUTPUT
       - name: new output echo 
         run: echo ${{ steps.new-cached.outputs.dir }}
       
