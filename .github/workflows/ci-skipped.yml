@@ -1,0 +1,11 @@
+name: Build & Test
+on:
+  pull_request:
+    paths:
+      - 'docs/**'
+
+jobs:
+  Test:
+    runs-on: ubuntu-latest
+    steps:
+      - run: 'echo "No Test Required"'
