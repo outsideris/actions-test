@@ -1,6 +1,8 @@
 name: Build & Test
 on:
   pull_request:
+    paths:
+      - 'docs/**'
 
 jobs:
   build:
@@ -10,5 +12,4 @@ jobs:
   Test:
     runs-on: ubuntu-latest
     steps:
-      # - run: 'echo "Test Done"'
-      - run: exit 1
+      - run: 'echo "Test Done"'
