@@ -6,6 +6,7 @@ on:
 
 jobs:
   Test:
+    if: False
     runs-on: ubuntu-latest
     steps:
       - run: 'echo "No Test Required"'
