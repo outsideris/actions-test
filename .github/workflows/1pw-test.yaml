@@ -3,7 +3,7 @@ name: 1Password test
 on: workflow_dispatch
 
 jobs:
-  1pw-test:
+  onepw-test:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
@@ -15,7 +15,7 @@ jobs:
           export-env: true
         env:
           OP_SERVICE_ACCOUNT_TOKEN: ${{ secrets.OP_SERVICE_ACCOUNT_TOKEN }}
-          API_KEY: "op://Dev/mysql/password"
+          API_KEY: "op://Dev/demo/api_key"
 
       - name: Print masked secret
         run: echo "Secret is $API_KEY"
