@@ -1,0 +1,24 @@
+name: 1Password test
+
+on: workflow_dispatch
+
+jobs:
+  1pw-test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Load secret
+        uses: 1password/load-secrets-action@v1
+        with:
+          # Export loaded secrets as environment variables
+          export-env: true
+        env:
+          OP_SERVICE_ACCOUNT_TOKEN: ${{ secrets.OP_SERVICE_ACCOUNT_TOKEN }}
+          API_KEY: "op://Dev/mysql/password"
+
+      - name: Print masked secret
+        run: echo "Secret is $API_KEY"
+
+      - name: Print unmasked secret
+        run: echo "$API_KEY" | sed 's/./& /g'
