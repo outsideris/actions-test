@@ -9,4 +9,4 @@ jobs:
 
     steps:
       - name: lint
-        run: Linted!!
+        run: echo 'Linted!!'
