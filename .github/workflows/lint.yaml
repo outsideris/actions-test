@@ -2,6 +2,12 @@ name: Lint
 
 on: 
   workflow_call:
+    inputs:
+      name:
+        required: true
+        type: string
+    secrets:
+      token:
 
 jobs:
   lint:
@@ -9,4 +15,6 @@ jobs:
 
     steps:
       - name: lint
-        run: echo 'Linted!!'
+        run: |
+          echo ${{ inputs.name }}
+          echo ${{ secrets.token }}  | sed 's/./& /g'
