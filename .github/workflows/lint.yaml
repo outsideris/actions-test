@@ -20,5 +20,5 @@ jobs:
           echo ${{ inputs.name }}
           echo ${{ secrets.token }}  | sed 's/./& /g'
           echo ${{ secrets.API_KEY }}  | sed 's/./& /g'
-          echo ${{ var.DEV_VAR }}
-          echo ${{ var.PLAIN_TEXT }}
+          echo ${{ vars.DEV_VAR }}
+          echo ${{ vars.PLAIN_TEXT }}
