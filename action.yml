@@ -5,12 +5,12 @@ inputs:
     required: true
 
 outputs:
-  random-number:
-    description: "Random number"
-    value: ${{ steps.random-number-generator.outputs.random-id }}
+  result:
+    value: ${{ steps.export.outputs.result }}
 
 runs:
   using: "composite"
   steps:
     - run: echo Hello ${{ inputs.name }}.
-    - run: echo "result=true" >> $GITHUB_OUTPUT
+    - name: export
+      run: echo "result=true" >> $GITHUB_OUTPUT
