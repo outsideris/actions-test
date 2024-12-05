@@ -19,8 +19,4 @@ jobs:
       - name: lint
         run: |
           echo ${{ inputs.name }}
-          echo ${{ secrets.token }}  | sed 's/./& /g'
           echo ${{ secrets.API_KEY }}  | sed 's/./& /g'
-          echo ${{ vars.DEV_VAR }}  | sed 's/./& /g'
-          echo ${{ secrets.DEV_VAR }}  | sed 's/./& /g'
-          echo ${{ vars.PLAIN_TEXT }}
