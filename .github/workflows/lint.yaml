@@ -10,6 +10,7 @@ on:
     secrets:
       token:
       API_KEY:
+        required: true
 
 jobs:
   lint:
