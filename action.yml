@@ -12,5 +12,5 @@ runs:
   using: "composite"
   steps:
     - run: echo Hello ${{ inputs.name }}.
-    - name: export
+    - id: export
       run: echo "result=true" >> $GITHUB_OUTPUT
