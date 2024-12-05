@@ -12,5 +12,7 @@ runs:
   using: "composite"
   steps:
     - run: echo Hello ${{ inputs.name }}.
+      shell: bash
     - id: export
+      shell: bash
       run: echo "result=true" >> $GITHUB_OUTPUT
