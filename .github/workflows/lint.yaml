@@ -9,7 +9,7 @@ on:
         type: string
     secrets:
       token:
-      DEV_VAR:
+      API_KEY:
 
 jobs:
   lint:
