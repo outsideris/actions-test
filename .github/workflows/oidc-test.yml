@@ -18,10 +18,4 @@ jobs:
         run: aws s3 ls outsider-oidc-demo-bucket
 
       - name: Check env
-        run: env
-
-  print-env:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Check env
         run: env | grep AWS
