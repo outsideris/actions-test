@@ -3,9 +3,6 @@ on:
   push:
   workflow_dispatch:
 
-permissions:
-  id-token: write
-
 jobs:
   access-s3:
     runs-on: ubuntu-latest
