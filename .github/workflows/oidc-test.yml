@@ -3,6 +3,9 @@ on:
   push:
   workflow_dispatch:
 
+permissions:
+  id-token: write
+
 jobs:
   access-s3:
     runs-on: ubuntu-latest
@@ -14,7 +17,7 @@ jobs:
           role-to-assume: arn:aws:iam::252807701206:role/oidc-demo-role
 
       - name: List files in S3 bucket
-        run: aws s3 ls outsider-oidc-demo-bucket
+        run: aws s3 ls wayland-public
 
       - name: Check env
         run: env | grep AWS
